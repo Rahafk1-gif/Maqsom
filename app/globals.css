@@ -1,26 +1,54 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
+:root {
+  --ink: #1B2A2A;
+  --ink-soft: #4B5D5C;
+  --bg: #FAF9F5;
+  --panel: #FFFFFF;
+  --line: #E4E1D6;
+  --gold: #B9862F;
+  --teal: #2E6F63;
+  --teal-dark: #1F5147;
+  --danger: #B4472F;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
   padding: 0;
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif;
 }
 
-body {
-  font-family: 'IBM Plex Sans Arabic', Tahoma, sans-serif;
-  background-color: #FAF9F5;
-  color: #1F2937;
-  direction: rtl;
+a { color: inherit; text-decoration: none; }
+
+.wrap { max-width: 760px; margin: 0 auto; padding: 32px 20px 60px; }
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 22px;
+  margin-bottom: 18px;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.field { margin-bottom: 14px; }
+.field label { display: block; font-size: 13px; color: var(--ink-soft); margin-bottom: 5px; }
+.field input {
+  width: 100%; padding: 11px 12px; border-radius: 10px; border: 1px solid var(--line);
+  background: var(--bg); color: var(--ink); font-size: 15px; font-family: inherit;
+  direction: ltr; text-align: right;
 }
 
-button {
-  cursor: pointer;
-  font-family: inherit;
+button.primary {
+  width: 100%; padding: 14px; border: none; border-radius: 12px; background: var(--gold);
+  color: #2A1E08; font-weight: 700; font-size: 16px; cursor: pointer; font-family: inherit;
 }
 
-input {
-  font-family: inherit;
+button.ghost {
+  width: 100%; padding: 12px; border: 1px solid var(--line); border-radius: 12px; background: transparent;
+  color: var(--ink); font-size: 14px; cursor: pointer; font-family: inherit;
 }
+
+.error { color: var(--danger); font-size: 13px; margin-top: 8px; }
+.hint { color: var(--ink-soft); font-size: 13px; margin-top: 12px; text-align: center; }
